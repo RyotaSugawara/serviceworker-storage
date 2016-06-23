@@ -1,0 +1,46 @@
+{
+  "name": "serviceworker-storage",
+  "version": "0.0.0",
+  "description": "localStorage like storage in ServiceWorker",
+  "homepage": "https://github.com/RyotaSugawara/serviceworker-storage",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RyotaSugawara/serviceworker-storage"
+  },
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "directories": {
+    "test": "test/"
+  },
+  "author": "ryo_suga",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RyotaSugawara/serviceworker-storage/issues"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production babel src --out-dir lib --source-maps inline",
+    "watch": "babel src --out-dir lib --watch --source-maps inline",
+    "test": "NODE_ENV=development karma start",
+    "prepublish": "npm run test && npm run build"
+  },
+  "private": true,
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-plugin-espower": "^2.3.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
+    "karma": "^0.13.22",
+    "karma-browserify": "^5.0.5",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-mocha": "^1.0.1",
+    "mocha": "^2.5.3",
+    "power-assert": "^1.4.1",
+    "watchify": "^3.7.0"
+  }
+}
