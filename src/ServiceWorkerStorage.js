@@ -54,7 +54,7 @@ export class ServiceWorkerStorage {
       .then(store => store['delete'](key))
       .then(promisify);
   }
-  purge() {
+  clean() {
     return this.__db
       .then(db => {
         const transaction = db.transaction(db.objectStoreNames, IDB_TRANSACTION_MODE.readwrite);

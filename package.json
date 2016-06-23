@@ -27,19 +27,17 @@
     "prepublish": "npm run test && npm run build"
   },
   "private": true,
-  "author": "",
-  "license": "MIT",
   "devDependencies": {
-    "babel-cli": "^6.10.1",
+    "babel-cli": "^6.11.4",
     "babel-plugin-espower": "^2.3.1",
-    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-es2015": "^6.13.2",
     "babelify": "^7.3.0",
-    "browserify": "^13.0.1",
-    "karma": "^0.13.22",
-    "karma-browserify": "^5.0.5",
+    "browserify": "^13.1.0",
+    "karma": "^1.2.0",
+    "karma-browserify": "^5.1.0",
     "karma-chrome-launcher": "^1.0.1",
     "karma-mocha": "^1.0.1",
-    "mocha": "^2.5.3",
+    "mocha": "^3.0.2",
     "power-assert": "^1.4.1",
     "watchify": "^3.7.0"
   }
