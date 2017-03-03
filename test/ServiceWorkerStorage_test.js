@@ -32,10 +32,11 @@ describe('ServiceWorkerStorage', function() {
   });
 
   it('should success to purge storage', function() {
-    return storage.purge()
+    return storage.clear()
       .then(() => storage.getItem(key_name))
       .then(name => {
         assert(name === undefined);
       });
   });
 });
+

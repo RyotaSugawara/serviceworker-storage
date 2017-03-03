@@ -33,28 +33,30 @@ export class ServiceWorkerStorage {
     };
     this.__db = promisify(db);
   }
-  accessAsyncStore(mode) {
+
+  _accessAsyncStore(mode) {
     return this.__db.then(db => {
       const transaction = db.transaction(this.STORE_NAME, mode);
       return transaction.objectStore(this.STORE_NAME);
     });
   }
+
   getItem(key) {
-    return this.accessAsyncStore(IDB_TRANSACTION_MODE.readonly)
+    return this._accessAsyncStore(IDB_TRANSACTION_MODE.readonly)
       .then(store => store.get(key))
       .then(promisify);
   }
   setItem(key, value) {
-    return this.accessAsyncStore(IDB_TRANSACTION_MODE.readwrite)
+    return this._accessAsyncStore(IDB_TRANSACTION_MODE.readwrite)
       .then(store => store.put(value, key))
       .then(promisify);
   }
   removeItem(key) {
-    return this.accessAsyncStore(IDB_TRANSACTION_MODE.readwrite)
+    return this._accessAsyncStore(IDB_TRANSACTION_MODE.readwrite)
       .then(store => store['delete'](key))
       .then(promisify);
   }
-  clean() {
+  clear() {
     return this.__db
       .then(db => {
         const transaction = db.transaction(db.objectStoreNames, IDB_TRANSACTION_MODE.readwrite);
