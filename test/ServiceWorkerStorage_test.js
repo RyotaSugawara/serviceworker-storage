@@ -1,3 +1,5 @@
+/* eslint env: "mocha" */
+
 import assert from 'power-assert';
 import {
   ServiceWorkerStorage
@@ -17,6 +19,25 @@ describe('ServiceWorkerStorage', function() {
     });
   });
 
+  it('should returns number', function() {
+    return storage.length().then(len => {
+      assert(typeof len === 'number');
+      assert(len === 1);
+    });
+  });
+
+  it('should return key name', function() {
+    return storage.key(0).then(key => {
+      assert(key === key_name);
+    });
+  });
+
+  it('should return null if not exists.', function() {
+    return storage.key(1).then(key => {
+      assert(key === null);
+    });
+  });
+
   it('should be removed target', function() {
     return storage.removeItem(key_name).then(name => {
       assert(name === undefined);
@@ -32,10 +53,11 @@ describe('ServiceWorkerStorage', function() {
   });
 
   it('should success to purge storage', function() {
-    return storage.purge()
+    return storage.clear()
       .then(() => storage.getItem(key_name))
       .then(name => {
         assert(name === undefined);
       });
   });
 });
+
