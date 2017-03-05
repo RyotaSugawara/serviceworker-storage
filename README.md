@@ -18,6 +18,23 @@ import ServiceWorkerStorage from 'serviceworker-storage';
 const storage = new ServiceWorkerStoarge('MyStorage', 1);
 ```
 
+## length()
+get storage length.
+```javascript
+storage.length().then(len => {
+  console.log(len);
+});
+```
+
+## key(index)
+get key by index.
++ *index:* An integer representing the number of the key you want to get the name of. 
+```javascript
+storage.key(0).then(key => {
+  console.log(key);
+});
+```
+
 ## getItem(key)
 get item by key.
 + *key<string>:* storage unique key.
@@ -42,8 +59,8 @@ remove item by key.
 storage.removeItem(key);
 ```
 
-## clean()
+## clear()
 clean storage.
 ```javascript
-storage.clean();
+storage.clear();
 ```
