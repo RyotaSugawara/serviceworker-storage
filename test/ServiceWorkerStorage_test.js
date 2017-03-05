@@ -1,3 +1,5 @@
+/* eslint env: "mocha" */
+
 import assert from 'power-assert';
 import {
   ServiceWorkerStorage
@@ -14,6 +16,25 @@ describe('ServiceWorkerStorage', function() {
     return storage.__db.then(db => {
       indexedDB.deleteDatabase('MyStorage');
       return;
+    });
+  });
+
+  it('should returns number', function() {
+    return storage.length().then(len => {
+      assert(typeof len === 'number');
+      assert(len === 1);
+    });
+  });
+
+  it('should return key name', function() {
+    return storage.key(0).then(key => {
+      assert(key === key_name);
+    });
+  });
+
+  it('should return null if not exists.', function() {
+    return storage.key(1).then(key => {
+      assert(key === null);
     });
   });
 

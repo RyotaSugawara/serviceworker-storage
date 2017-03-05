@@ -41,6 +41,20 @@ export class ServiceWorkerStorage {
     });
   }
 
+  length() {
+    return this._accessAsyncStore(IDB_TRANSACTION_MODE.readonly)
+      .then(store => promisify(store.getAllKeys()))
+      .then(keys => keys.length);
+  }
+
+  key(idx) {
+    if (!arguments.length) return Promise.reject(new TypeError('Failed to execute "key" on "Storage"'));
+    if (typeof idx !== 'number') idx = 0;
+    return this._accessAsyncStore(IDB_TRANSACTION_MODE.readonly)
+      .then(store => promisify(store.getAllKeys()))
+      .then(keys => keys[idx] || null);
+  }
+
   getItem(key) {
     return this._accessAsyncStore(IDB_TRANSACTION_MODE.readonly)
       .then(store => store.get(key))
