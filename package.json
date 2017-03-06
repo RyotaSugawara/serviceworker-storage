@@ -1,6 +1,6 @@
 {
   "name": "serviceworker-storage",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "localStorage like storage in ServiceWorker",
   "homepage": "https://github.com/RyotaSugawara/serviceworker-storage",
   "repository": {
