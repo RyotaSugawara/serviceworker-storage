@@ -25,7 +25,6 @@
     "url": "https://github.com/RyotaSugawara/serviceworker-storage/issues"
   },
   "scripts": {
-    "postinstall": "npm run build",
     "build": "NODE_ENV=production babel src --out-dir lib --source-maps inline",
     "watch": "babel src --out-dir lib --watch --source-maps inline",
     "test": "NODE_ENV=development karma start",
