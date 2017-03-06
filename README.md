@@ -4,7 +4,7 @@ Storage that can be used like a localStorage easy-to-use on ServiceWorker.
 
 # install
 ```
-npm install git://github.com/RyotaSugawara/serviceworker-storage.git
+npm install --save serviceworker-storage
 ```
 
 # usage
