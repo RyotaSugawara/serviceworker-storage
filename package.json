@@ -7,6 +7,10 @@
     "type": "git",
     "url": "https://github.com/RyotaSugawara/serviceworker-storage"
   },
+  "keywords": [
+    "ServiceWorker",
+    "localStorage"
+  ],
   "main": "lib/index.js",
   "files": [
     "lib",
@@ -21,12 +25,12 @@
     "url": "https://github.com/RyotaSugawara/serviceworker-storage/issues"
   },
   "scripts": {
+    "postinstall": "npm run build",
     "build": "NODE_ENV=production babel src --out-dir lib --source-maps inline",
     "watch": "babel src --out-dir lib --watch --source-maps inline",
     "test": "NODE_ENV=development karma start",
     "prepublish": "npm run test && npm run build"
   },
-  "private": true,
   "devDependencies": {
     "babel-cli": "^6.11.4",
     "babel-plugin-espower": "^2.3.1",
