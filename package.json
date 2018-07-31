@@ -42,6 +42,7 @@
     "karma-mocha": "^1.0.1",
     "mocha": "^5.2.0",
     "power-assert": "^1.4.1",
+    "puppeteer": "^1.6.1",
     "watchify": "^3.7.0"
   }
 }
